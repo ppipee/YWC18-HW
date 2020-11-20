@@ -28,7 +28,7 @@ const PriceSelection = () => {
 
 	const items = (shop?.priceRange || []).map((price, index) => ({ label: price, value: index + 1 }))
 
-	return <Dropdown items={items} searchable onItemSelect={onChange} maxHeight={150} placeHolder="..." />
+	return <Dropdown items={items} searchable onItemSelect={onChange} maxHeight={500} placeHolder="กรุณาเลือก" />
 }
 
 export default PriceSelection

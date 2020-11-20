@@ -1,6 +1,9 @@
+import styled from 'styled-components'
+
+import ContentContainer from 'common/components/ContentContainer'
 import Flex from 'common/components/Flex'
 import { gray } from 'common/styles/colors'
-import styled from 'styled-components'
+import { media } from 'common/styles/utils/viewport'
 
 export const NavWrapper = styled(Flex)`
 	height: 60px;
@@ -9,7 +12,6 @@ export const NavWrapper = styled(Flex)`
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 0 12px;
 	box-sizing: border-box;
 `
 
@@ -17,29 +19,46 @@ export const Logo = styled.img`
 	height: 40px;
 `
 
-export const SearchInput = styled.input`
-	border: none;
-	outline: none;
-	padding: 8px 12px;
-	font-size: 16px;
-	width: 100;
-	flex: 1;
-`
-
 export const ProvinceWrapper = styled.div`
 	width: 200px;
-	.css-1iyop7z-control {
-		border: none;
+	padding: 1px;
+	.css-rlv3vt-control {
+		border: none !important;
 	}
+	border-right: 1px solid ${gray[100]};
 `
 
 export const SearchContainer = styled(Flex)`
-	border-radius: 8px;
+	padding-left: 4px;
+	border-radius: 12px;
 	flex: 1;
-	border: 1px solid ${gray[500]};
+	border: 1px solid ${gray[100]};
 `
 
 export const EmptyBox = styled.div`
 	height: 60px;
 	width: 100%;
+`
+
+export const Container = styled(ContentContainer)`
+	display: flex;
+	align-items: center;
+	max-width: 1280px;
+	height: 100%;
+	width: 100%;
+	& > * {
+		width: 100%;
+	}
+
+	${media.md`
+		padding:0 16px;
+	`}
+`
+
+export const SearchIconWrapper = styled(Flex)`
+	width: 62px;
+	height: 40px;
+	box-sizing: border-box;
+	border-radius: 0 12px 12px 0;
+	background-color: #f8f8f8;
 `

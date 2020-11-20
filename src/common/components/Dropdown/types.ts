@@ -48,4 +48,5 @@ export interface DropdownProps {
 	maxHeight: number
 	searchable?: boolean
 	disabled?: boolean
+	defaultValue?: { label: any; value: any }
 }

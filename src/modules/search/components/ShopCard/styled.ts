@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Flex from 'common/components/Flex'
 import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
-import { gray } from 'common/styles/colors'
+import { gray, white } from 'common/styles/colors'
 import { media } from 'common/styles/utils/viewport'
 
 const IMG_SIZE = '250px'
@@ -28,7 +28,8 @@ export const DetailContainer = styled.div`
 `
 
 export const Card = styled(Gap)`
-	border: 1px solid black;
+	background-color: ${white};
+	border: 1px solid rgb(201, 225, 233);
 `
 
 export const Title = styled(Text)`

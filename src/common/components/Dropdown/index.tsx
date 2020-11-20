@@ -12,6 +12,7 @@ const Dropdown = ({
 	maxHeight,
 	searchable = false,
 	disabled = false,
+	defaultValue,
 }: DropdownProps) => {
 	const handleChange = (selectedItem: SelectedItem) => {
 		onItemSelect(selectedItem.value)
@@ -19,7 +20,7 @@ const Dropdown = ({
 
 	return (
 		<StyledSelect
-			className="highlight"
+			defaultValue={defaultValue}
 			isClearable={false}
 			isSearchable={searchable}
 			styles={CustomDropDownStyles}

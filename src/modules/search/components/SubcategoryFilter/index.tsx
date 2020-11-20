@@ -34,6 +34,7 @@ const SubcategoryFilter = () => {
 
 	if (categoryIndex === -1) return null
 	const subcategories = shop.categories[categoryIndex]?.subcategories || []
+	const subcategoryItems = ['ทั้งหมด', ...subcategories]
 
 	if (subcategories.length === 0) return null
 
@@ -43,9 +44,8 @@ const SubcategoryFilter = () => {
 				{`ประเภท${filter.categoryName}`}
 			</Text>
 			{subcategories.length !== 0 && (
-				<RadioGroup onChange={onChange} defaultValue={filter.subcategoryName || ''}>
-					{/* <Radio label="ทั้งหมด" value="" /> */}
-					{subcategories.map((category, index) => (
+				<RadioGroup onChange={onChange} defaultValue={filter.subcategoryName || 'ทั้งหมด'}>
+					{subcategoryItems.map((category, index) => (
 						<Radio key={`${category}-${index}`} label={category} value={category} />
 					))}
 				</RadioGroup>

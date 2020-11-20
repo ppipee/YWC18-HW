@@ -17,7 +17,7 @@ export const CustomDropDownStyles = {
 	control: (provided: ControlProps<OptionTypeBase>) => ({
 		...provided,
 		color: black,
-		borderColor: gray[500],
+		borderColor: gray[100],
 		boxShadow: 'none',
 		'&:hover': {
 			boxShadow: 'none',
@@ -39,8 +39,7 @@ export const CustomDropDownStyles = {
 	}),
 	dropdownIndicator: (provided: IndicatorProps<OptionTypeBase>) => ({
 		...provided,
-		padding: '1px',
-		paddingLeft: '8px',
+		padding: '8px',
 	}),
 	valueContainer: (provided: ValueContainerProps<OptionTypeBase>) => ({
 		...provided,

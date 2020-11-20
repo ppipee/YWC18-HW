@@ -10,9 +10,29 @@ import useQuery from 'common/hooks/useQuery'
 import useSearchContext from 'modules/search/hooks/useSearchContext'
 import { FilterMethod } from 'modules/search/types'
 
+import LocationIcon from 'common/icons/LocationIcon'
+import MultiLocationIcon from 'common/icons/MultiLocationIcon'
+import Gap from 'common/components/Gap'
+
 const DEFAULT_ITEMS = [
-	{ label: 'พื้นที่ใกล้ฉัน', value: 'near' },
-	{ label: 'พื้นที่ทั้งหมด', value: '' },
+	{
+		label: (
+			<Gap $size="4px" $alignCenter>
+				<LocationIcon />
+				<span>พื้นที่ใกล้ฉัน</span>
+			</Gap>
+		),
+		value: 'near-me',
+	},
+	{
+		label: (
+			<Gap $size="4px" $alignCenter>
+				<MultiLocationIcon />
+				<span>พื้นที่ทั้งหมด</span>
+			</Gap>
+		),
+		value: 'ทั้งหมด',
+	},
 ]
 
 const ProvinceSelection = () => {
@@ -33,7 +53,16 @@ const ProvinceSelection = () => {
 
 	const items = [...DEFAULT_ITEMS, ...(shop?.provinces || []).map(province => ({ label: province, value: province }))]
 
-	return <Dropdown items={items} searchable onItemSelect={onChange} maxHeight={150} placeHolder="..." />
+	return (
+		<Dropdown
+			defaultValue={DEFAULT_ITEMS[0]}
+			items={items}
+			searchable
+			onItemSelect={onChange}
+			maxHeight={400}
+			placeHolder="..."
+		/>
+	)
 }
 
 export default ProvinceSelection

@@ -1,10 +1,10 @@
-import { h } from 'preact'
+import { h, VNode } from 'preact'
 import { useCallback } from 'preact/hooks'
 
 import history from 'core/router/history'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
 
-import Radio from 'common/components/Radio'
+import Radio, { RadioProps } from 'common/components/Radio'
 import RadioGroup from 'common/components/RadioGroup'
 import useQuery from 'common/hooks/useQuery'
 
@@ -31,14 +31,15 @@ const MerchantFilter = () => {
 
 	if (!shop) return null
 
+	const categories = [{ name: 'ทั้งหมด' }, ...(shop?.categories || [])]
+
 	return (
 		<Gap $type="vertical" $size="12px">
 			<Text size="16px" weight="bold">
 				ประเภทร้านค้า
 			</Text>
-			<RadioGroup onChange={onChange} defaultValue={filter.categoryName || ''}>
-				{/* <Radio label="ทั้งหมด" value="" /> */}
-				{(shop?.categories || []).map((category, index) => (
+			<RadioGroup onChange={onChange} defaultValue={filter.categoryName || 'ทั้งหมด'}>
+				{categories.map((category, index) => (
 					<Radio key={`${category.name}-${index}`} label={category.name} value={category.name} />
 				))}
 			</RadioGroup>

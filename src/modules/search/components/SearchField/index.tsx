@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { useCallback, useEffect } from 'preact/hooks'
+import { useCallback } from 'preact/hooks'
 
 import history from 'core/router/history'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
@@ -27,7 +27,12 @@ const SearchField = () => {
 	)
 	const { onChange } = useOnChange('', [setQuery])
 
-	return <SearchInput onChange={onChange} />
+	return (
+		<SearchInput
+			onChange={onChange}
+			placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป"
+		/>
+	)
 }
 
 export default SearchField

@@ -19,4 +19,15 @@ export const RightSection = styled.div`
 
 export const Container = styled(ContentContainer)`
 	padding: 24px 16px;
+	height: 100%;
+`
+
+export const Background = styled.div`
+	/* position: fixed; */
+	background-image: url('../../common/images/result-bg.png');
+	min-height: calc(100vh - 108px);
+	background-position: center center;
+	background-size: cover;
+	z-index: -1;
+	width: 100%;
 `
