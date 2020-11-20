@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "ywc18",
+  "name": "ywc18-hw",
   "version": "0.0.0",
   "license": "MIT",
-  "homepage": "http://ppipee.github.io/ywc-hw",
+  "homepage": "http://ppipee.github.io/ywc18-hw",
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
