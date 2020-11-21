@@ -2,9 +2,11 @@ import { Helmet } from 'react-helmet'
 
 import { h } from 'preact'
 
+import useQuery from 'core/router/hooks/useQuery'
+
 import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
-import useQuery from 'core/router/hooks/useQuery'
+import Logo from 'common/images/halfhalf-logo-mini.png'
 
 import Breadcrumbs from './components/Breadcrumbs'
 import DesktopFilter from './components/DesktopFilter'
@@ -25,6 +27,7 @@ const Search = () => {
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>คนละครึ่ง</title>
+				<link rel="icon" type="image/png" href="common/images/halfhalf-logo-mini.png" sizes="16x16" />
 			</Helmet>
 			<NavBar />
 			<Breadcrumbs />

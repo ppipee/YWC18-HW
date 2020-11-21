@@ -20,7 +20,9 @@ const NavBar = () => {
 			<NavWrapper>
 				<Container>
 					<Gap $alignCenter $size={space}>
-						<Logo src={isDesktop ? HalfHalfLogo : HalfHalfLogoMini} />
+						<Logo
+							src={isDesktop ? 'common/images/halfhalf-logo.png' : 'common/images/halfhalf-logo-mini.png'}
+						/>
 						<SearchContainer $alignItems="center">
 							{isDesktop && (
 								<ProvinceWrapper>
