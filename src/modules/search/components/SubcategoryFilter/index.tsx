@@ -15,7 +15,6 @@ import { FilterMethod } from 'modules/search/types'
 
 const SubcategoryFilter = () => {
 	const { shop } = useSearchContext()
-	const { location } = history
 	const filter: Record<FilterMethod, string> = useQuery()
 
 	const onChange = useCallback(
