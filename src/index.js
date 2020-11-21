@@ -1,4 +1,4 @@
 import './index.css'
-import App from './app.tsx'
+import App from './app'
 
 export default App

@@ -1,11 +1,11 @@
 import { h } from 'preact'
 import { useCallback } from 'preact/hooks'
 
-import history from 'core/router/history'
+import { route } from 'preact-router'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
 
 import Dropdown from 'common/components/Dropdown'
-import useQuery from 'common/hooks/useQuery'
+import useQuery from 'core/router/hooks/useQuery'
 
 import useSearchContext from 'modules/search/hooks/useSearchContext'
 import { FilterMethod } from 'modules/search/types'
@@ -37,16 +37,15 @@ const DEFAULT_ITEMS = [
 
 const ProvinceSelection = () => {
 	const { shop } = useSearchContext()
-	const { location } = history
 	const filter: Record<FilterMethod, string> = useQuery()
 
 	const onChange = useCallback(
 		(value: any) => {
-			const url = buildUrlWithParams(location.pathname, {
+			const url = buildUrlWithParams('/', {
 				...filter,
 				[FilterMethod.Province]: value,
 			})
-			history.push(url)
+			route(url)
 		},
 		[filter, history],
 	)

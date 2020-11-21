@@ -1,17 +1,17 @@
 import { h } from 'preact'
 import { useCallback } from 'preact/hooks'
 
-import history from 'core/router/history'
+import { route } from 'preact-router'
+import useQuery from 'core/router/hooks/useQuery'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
 
+import Gap from 'common/components/Gap'
 import Radio from 'common/components/Radio'
 import RadioGroup from 'common/components/RadioGroup'
-import useQuery from 'common/hooks/useQuery'
+import Text from 'common/components/Text'
 
 import useSearchContext from 'modules/search/hooks/useSearchContext'
 import { FilterMethod } from 'modules/search/types'
-import Text from 'common/components/Text'
-import Gap from 'common/components/Gap'
 
 const SubcategoryFilter = () => {
 	const { shop } = useSearchContext()
@@ -20,13 +20,13 @@ const SubcategoryFilter = () => {
 
 	const onChange = useCallback(
 		(value: string) => {
-			const url = buildUrlWithParams(location.pathname, {
+			const url = buildUrlWithParams('/', {
 				...filter,
 				[FilterMethod.Category]: value,
 			})
-			history.push(url)
+			route(url)
 		},
-		[filter, history.location],
+		[filter],
 	)
 
 	if (!shop) return null

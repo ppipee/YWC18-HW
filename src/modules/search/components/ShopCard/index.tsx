@@ -2,7 +2,7 @@ import { h } from 'preact'
 
 import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
-// import FoodPlaceHolder from '../../../../common/images/food-placeholder.png'
+import FoodPlaceHolder from 'common/images/food-placeholder.png'
 import { black, gray } from 'common/styles/colors'
 import useResponsive from 'common/styles/hooks/useResponsive'
 import { Merchant, OpenStatus } from 'common/types/shop'

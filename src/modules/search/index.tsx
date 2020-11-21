@@ -4,7 +4,7 @@ import { h } from 'preact'
 
 import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
-import useQuery from 'common/hooks/useQuery'
+import useQuery from 'core/router/hooks/useQuery'
 
 import Breadcrumbs from './components/Breadcrumbs'
 import DesktopFilter from './components/DesktopFilter'

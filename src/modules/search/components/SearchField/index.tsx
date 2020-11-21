@@ -1,11 +1,10 @@
 import { h } from 'preact'
 import { useCallback } from 'preact/hooks'
-
-import history from 'core/router/history'
+import { route } from 'preact-router'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
 
 import useOnChange from 'common/hooks/useOnChange'
-import useQuery from 'common/hooks/useQuery'
+import useQuery from 'core/router/hooks/useQuery'
 
 import { FilterMethod } from 'modules/search/types'
 
@@ -13,17 +12,17 @@ import { SearchInput } from './styled'
 
 const SearchField = () => {
 	const filter = useQuery()
-	const { location } = history
 
 	const setQuery = useCallback(
 		(keyword: string) => {
-			const url = buildUrlWithParams(location.pathname, {
+			const url = buildUrlWithParams('/', {
 				...filter,
 				[FilterMethod.Query]: keyword,
 			})
-			history.push(url)
+
+			route(url)
 		},
-		[history.location, filter],
+		[filter],
 	)
 	const { onChange } = useOnChange('', [setQuery])
 

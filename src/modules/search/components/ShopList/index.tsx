@@ -1,9 +1,10 @@
 import { h } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 
+import useQuery from 'core/router/hooks/useQuery'
+
 import Gap from 'common/components/Gap'
 import Text from 'common/components/Text'
-import useQuery from 'common/hooks/useQuery'
 import { Merchant } from 'common/types/shop'
 
 import ShopCard from 'modules/search/components/ShopCard'
