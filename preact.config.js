@@ -19,7 +19,16 @@ export default {
 			},
 		})
 
+		config.module.rules.push({
+			test: /\.(png|jpe?g|gif|jp2|webp)$/,
+			loader: 'file-loader',
+			options: {
+				name: 'common/images/[name].[ext]',
+			},
+		})
+
 		config.resolve.modules.push(env.src)
+		// eslint-disable-next-line no-undef
 		config.resolve.alias['preact-cli-entrypoint'] = resolve(process.cwd(), 'src', 'index')
 	},
 }

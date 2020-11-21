@@ -4,7 +4,7 @@ import { ScreenName, BreakPoints } from './screenSizes'
 
 type CssArgsType = Parameters<typeof css>
 
-export const media = Object.keys(BreakPoints).reduce((mediaCollector, size) => {
+export const media = Object.keys(BreakPoints).reduce((mediaCollector: any, size: any) => {
 	mediaCollector[size] = (...args: any[]) => css`
 		@media (max-width: ${BreakPoints[size]}px) {
 			${css(...(args as CssArgsType))};

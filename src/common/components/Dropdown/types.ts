@@ -1,5 +1,4 @@
 import { VNode, JSX } from 'preact'
-import { ReactText } from 'react'
 
 import { OptionTypeBase, PropsWithStyles, CommonProps, InnerRef, OptionsType } from 'react-select'
 
@@ -19,8 +18,8 @@ export interface State {
 }
 
 export interface SelectedItem {
-	label: VNode | ReactText
-	value: ReactText
+	label: VNode | string | number
+	value: string
 }
 
 export type OptionProps<OptionType extends OptionTypeBase> = PropsWithStyles &

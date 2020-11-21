@@ -1,10 +1,10 @@
-import { h, VNode } from 'preact'
+import { h } from 'preact'
 import { useCallback } from 'preact/hooks'
 
 import history from 'core/router/history'
 import buildUrlWithParams from 'core/router/utils/buildUrlWithParams'
 
-import Radio, { RadioProps } from 'common/components/Radio'
+import Radio from 'common/components/Radio'
 import RadioGroup from 'common/components/RadioGroup'
 import useQuery from 'common/hooks/useQuery'
 

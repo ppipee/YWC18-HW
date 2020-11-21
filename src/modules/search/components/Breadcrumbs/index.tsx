@@ -5,7 +5,6 @@ import Text from 'common/components/Text'
 import { white } from 'common/styles/colors'
 
 import { Container, Wrapper } from './styled'
-import Flex from 'common/components/Flex'
 
 const Breadcrumbs = () => {
 	return (

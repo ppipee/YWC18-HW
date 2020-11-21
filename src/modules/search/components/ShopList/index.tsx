@@ -1,20 +1,21 @@
 import { h } from 'preact'
+import { useCallback, useEffect, useState } from 'preact/hooks'
 
 import Gap from 'common/components/Gap'
+import Text from 'common/components/Text'
 import useQuery from 'common/hooks/useQuery'
+import { Merchant } from 'common/types/shop'
 
 import ShopCard from 'modules/search/components/ShopCard'
 import useSearchContext from 'modules/search/hooks/useSearchContext'
 import { FilterMethod } from 'modules/search/types'
 import filtering from 'modules/search/utils/filtering'
-import Text from 'common/components/Text'
-import { NotFoundShopContainer, LoadMoreButton, List } from './styled'
-import { useCallback, useEffect, useState } from 'preact/hooks'
-import { Merchant } from 'common/types/shop'
+
+import { List, LoadMoreButton, NotFoundShopContainer } from './styled'
 
 const ShopList = () => {
 	const [merchants, setMerchants] = useState<Merchant[]>([])
-	const [maxItemNumber, setMaxItem] = useState(3)
+	const [maxItemNumber, setMaxItem] = useState(15)
 
 	const { shop, isLoading, isFresh } = useSearchContext()
 	const filter: Record<FilterMethod, string> = useQuery()

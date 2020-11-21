@@ -1,5 +1,3 @@
-import { ChangeEvent } from 'react'
-
 import { h, VNode } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
 
@@ -17,7 +15,7 @@ const RadioGroup = ({ defaultValue, children, onChange }: RadioGroupProps) => {
 
 	const checkActiveState = (value?: string) => value === activeState
 
-	const selectRadio = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+	const selectRadio = useCallback((event: any) => {
 		const value: string = event.target.value
 
 		setActiveState(value)

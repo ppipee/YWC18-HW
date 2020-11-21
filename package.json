@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ywc18-hw",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "homepage": "http://ppipee.github.io/ywc18-hw",
   "scripts": {
@@ -45,6 +45,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.7",
     "@quickbaseoss/babel-plugin-styled-components-css-namespace": "^1.0.1",
     "@teamsupercell/typings-for-css-modules-loader": "^2.2.0",
     "@types/enzyme": "^3.10.5",
@@ -64,6 +65,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "file-loader": "^6.2.0",
     "husky": "^4.2.1",
     "jest": "^26.2.2",
     "jest-preset-preact": "^4.0.2",
