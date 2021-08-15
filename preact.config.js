@@ -11,6 +11,15 @@ export default {
 	 * @param {object} options - this is mainly relevant for plugins (will always be empty in the config), default to an empty object
 	 **/
 	webpack(config, env, helpers, options) {
+		config.resolve.modules.push(env.src)
+		// eslint-disable-next-line no-undef
+		// config.resolve.alias['preact-cli-entrypoint'] = resolve(process.cwd(), 'src', 'index')
+
+		config.resolve.alias['react'] = 'preact/compat'
+		config.resolve.alias['react-dom/test-utils'] = 'preact/test-utils'
+		config.resolve.alias['react-dom'] = 'preact/compat'
+		config.resolve.alias['react/jsx-runtime'] = 'preact/jsx-runtime'
+
 		config.module.rules[4].use.splice(1, 0, {
 			loader: '@teamsupercell/typings-for-css-modules-loader',
 			options: {
@@ -26,9 +35,5 @@ export default {
 				name: 'common/images/[name].[ext]',
 			},
 		})
-
-		config.resolve.modules.push(env.src)
-		// eslint-disable-next-line no-undef
-		config.resolve.alias['preact-cli-entrypoint'] = resolve(process.cwd(), 'src', 'index')
 	},
 }
